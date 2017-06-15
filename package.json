@@ -1,0 +1,16 @@
+{
+  "name": "ath17",
+  "version": "1.0.0",
+  "description": "A Traveler's High",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.7.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Calvin",
+  "license": "ISC"
+}

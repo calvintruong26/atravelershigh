@@ -1,0 +1,94 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.top-margin {
+    margin-top: 30px;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.container-fluid {
+    margin-left: 20px;
+}
+
+.std-margin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail-faded {
+    opacity: 0.8;
+    
+}
+
+.thumbnail-faded:hover {
+    opacity: 1;
+}
+
+.image-text {
+    font-weight: 300;
+    position: absolute;
+    top: 30%;
+    color: white;
+    text-shadow: 1px 1px black;
+    left: 0;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 767px) and (min-width: 0px) {
+    .header {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .header {
+        font-size: 60px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1169px) {
+    .header {
+        font-size: 70px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    .header {
+        font-size: 70px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+}
+
+
+
