@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 app.get('/api/recent', function(req, res) {
     var num = req.params.id;
-   Post.find({}, function (err, foundBlog){
+   Post.find({}).limit(10).exec(function (err, foundBlog){
         if (err) {
           console.log(err);
         } 
