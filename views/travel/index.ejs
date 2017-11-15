@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <h1 class="title category-title med-margin">Travel</h1>
+  <hr class="hr-title">
+  <div class="std-margin">
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+      <% travelPosts.forEach(function(travelPost){ %>
+          <div class="col-xs-12 col-sm-6 col-lg-6">
+              <div class="img-thumbnail">
+                  <img src="<%= travelPost.thumb %>">
+                  <div class="post-text">
+                    <h2><%= travelPost.name %></h2>
+                    <a href="/travel/<%= travelPost._id %>" class="more-btn">Read More</a>
+                  </div>
+              </div>
+          </div>
+      <% }); %>
+    </div>
+  </div>
+
+</div>
+
+<% include ../partials/footer %>

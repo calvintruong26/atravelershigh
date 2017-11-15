@@ -3,92 +3,478 @@ html {
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  min-width: 375px;
 }
 
-.navbar {
-    margin-bottom: 0;
+p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  text-transform: none;
 }
 
-.top-margin {
-    margin-top: 30px;
+h1 {
+  margin-top: 10px;
 }
 
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-
-.container-fluid {
-    margin-left: 20px;
-}
-
-.std-margin {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.thumbnail {
-    position: relative;
-}
-
-.thumbnail-faded {
-    opacity: 0.8;
-    
-}
-
-.thumbnail-faded:hover {
-    opacity: 1;
-}
-
-.image-text {
-    font-weight: 300;
+.splash-text {
     position: absolute;
-    top: 30%;
+    top: 40%;
     color: white;
-    text-shadow: 1px 1px black;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+					0px 8px 13px rgba(0, 0, 0, 0.1),
+					0px 18px 23px rgba(0, 0, 0, 0.1);
     left: 0;
     width: 100%;
 }
 
+#about-section {
+  padding: 20px 0 20px 0;
+  margin: 20px auto;
+  background-color: #f7f7f7;
+}
 
-@media screen and (max-width: 767px) and (min-width: 0px) {
+
+
+
+
+
+
+/* NAVBAR */
+
+.navbar {
+  padding: 10px 0;
+}
+
+.navbar-nav {
+  font-weight: 300;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.nav-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: lightgrey !important;
+}
+
+button.navbar-toggler {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+
+
+
+
+
+
+
+/* CONTAINER */
+
+.container {
+  min-width: 375px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-fluid {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+/* HELPERS */
+
+.std-margin {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.med-margin {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-thumbnail {
+  margin-bottom: 20px;
+}
+
+.img-thumbnail img {
+  width: 100%;
+}
+
+.image-behind-text {
+  position: relative;
+  display: inline-block;
+}
+
+.post-text {
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    color: white;
+    left: 0;
+    right: 0;
+    width: 90%;
+    text-align: center;
+}
+
+.more-btn {
+  font-size: 12px;
+  display: inline-block;
+  margin: 10px 10px;
+  border: 2px solid;
+  padding: 7px 7px;
+  color: white;
+  border-color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: background 0.2s;
+	-webkit-transition: background 0.2s;
+	-moz-transition: background 0.2s;
+}
+
+.more-btn:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 375px) and (min-width: 0px) {
     .header {
-        font-size: 40px;
+        font-size: 19px;
+    }
+
+    .post-text h2, .post-text {
+      font-size: 19px;
+      margin-bottom: 3px;
+    }
+
+    .more-btn {
+      font-size: 11px;
+      padding: 3px 3px;
+      margin: 3px 3px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    #featured-posts > h2{
+      font-size: 26px;
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    #about-section img {
+      width: 275px;
+      height: 275px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #about-section p {
+      display: block;
+      font-size: 14px;
+      text-align: center;
+
+    }
+
+    #about-section #about-text {
+      display: block;
+      width: 300px;
+      margin: 30px auto 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 575px) and (min-width: 376px) {
+    .header {
+        font-size: 5.2vw;
+    }
+
+    .post-text h2, .post-text {
+      font-size: 5.2vw;
+      margin-bottom: 1vw;
+    }
+
+    .more-btn {
+      font-size: 3vw;
+      padding: 1vw 1vw;
+      margin: 3px 3px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    #featured-posts > h2{
+      font-size: 7vw;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    #about-section img {
+      width: 275px;
+      height: 275px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #about-section p {
+      display: block;
+      font-size: 14px;
+      text-align: center;
+
+    }
+
+    #about-section #about-text {
+      display: block;
+      width: 300px;
+      margin: 30px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    .header {
+        font-size: 28px;
+    }
+
+    .post-text h2, .post-text {
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .more-btn {
+      font-size: 8px;
+      padding: 4px 4px;
+      margin: 5px 5px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    #featured-posts > h2{
+      font-size: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    #about-section img {
+      width: 325px;
+      height: 325px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #about-section p {
+      display: block;
+      font-size: 14px;
+      text-align: center;
+
+    }
+
+    #about-section #about-text {
+      display: block;
+      width: 400px;
+      margin: 30px auto 0 auto;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .header {
-        font-size: 60px;
+        font-size: 40px;
     }
-    
+
     p {
         font-size: 18px;
     }
+
+    #featured-posts > h2{
+      font-size: 45px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .post-text h2, .post-text {
+      font-size: 24px;
+    }
+
+    .more-btn {
+      font-size: 11px;
+    }
+
+    #about-section img {
+      width: 325px;
+      height: 325px;
+      display: block;
+      margin: 28px auto;
+    }
+
+    #about-section p {
+      font-size: 14px;
+      text-align: center;
+
+    }
+
+    #about-section #about-text {
+      width: 300px;
+      margin: 30px auto 30px auto;
+    }
+
 }
 
-@media screen and (min-width: 992px) and (max-width: 1169px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .header {
+        font-size: 55px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    #featured-posts > h2{
+      font-size: 55px;
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .post-text h2, .post-text {
+      font-size: 30px;
+    }
+
+    .more-btn {
+      font-size: 15px;
+    }
+
+    #about-section img {
+      width: 325px;
+      height: 325px;
+      display: block;
+      margin: 28px auto;
+    }
+
+    #about-section p {
+      text-indent: 50px;
+    }
+
+    #about-section #about-text {
+      width: 500px;
+      margin: 30px auto 30px auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .header {
         font-size: 70px;
     }
-    
+
     p {
         font-size: 18px;
     }
+
+    #featured-posts > h2{
+      font-size: 65px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .post-text h2, .post-text {
+      font-size: 40px;
+    }
+
+    .more-btn {
+      font-size: 20px;
+    }
+
+    #about-section img {
+      width: 325px;
+      height: 325px;
+      display: block;
+      margin: 28px auto;
+    }
+
+    #about-section p {
+      font-size: 20px;
+      text-indent: 50px;
+    }
+
+    #about-section #about-text {
+      width: 650px;
+      margin: 30px auto 0 auto;
+    }
 }
 
-@media screen and (min-width: 1170px) {
-    .header {
-        font-size: 70px;
-    }
-    
-    p {
-        font-size: 18px;
-    }
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .category-title {
+    font-size: 60px;
+  }
+
+  .blog-title {
+    font-size: 45px;
+  }
+
+  hr.hr-title {
+    width: 150px;
+    border: none;
+    height: 3px;
+    background-color: black;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .category-title {
+    font-size: 70px;
+  }
 
+  .blog-title {
+    font-size: 70px;
+  }
 
+  hr.hr-title {
+    width: 200px;
+    border: none;
+    height: 3px;
+    background-color: black;
+  }
+
+}

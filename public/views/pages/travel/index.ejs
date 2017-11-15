@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <% travelPosts.forEach(function(travelPost){ %>
+
+        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+            <div class="col-xs-12 col-sm-6 col-lg-6">
+                <div class="thumbnail">
+                    <img ng-src="<%= travelPost.thumb %>" class="thumbnail-faded">
+                    <h2 class="post-text"><%= travelPost.name %></h2>
+                    <div class="caption">
+                        <a class="btn btn-primary" href="/travel/<%= travelPost._id %>">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <% }); %>
+
+</div>
+
+<% include ../partials/footer %>

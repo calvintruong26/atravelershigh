@@ -4,8 +4,9 @@ var mongoose = require("mongoose");
 var postSchema = new mongoose.Schema({
     name: String,
     htmlContent: String,
-    postID: Number,
-    thumb: String
+    thumb: String,
+    category: String,
+    date: Date
 });
 
 //Create new collection
