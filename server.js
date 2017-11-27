@@ -2,13 +2,14 @@ var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 var Post = require("./models/post");
+var seedDB = require("./seed");
 
 
 mongoose.connect("mongodb://localhost/atravelershigh");
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
-app.get('/api/all-posts/recent', function(req, res) {
+app.get('/api/posts/recent', function(req, res) {
     Post.find({}).sort({'date': -1}).limit(10).exec(function(err, posts) {
         if (err) {
           console.log(err);
@@ -19,7 +20,7 @@ app.get('/api/all-posts/recent', function(req, res) {
     });
 });
 
-app.get('/api/all-posts/:id', function(req, res) {
+app.get('/api/posts/:id', function(req, res) {
     var num = req.params.id;
    Post.find({_id: num}, function (err, foundBlog){
         if (err) {
@@ -33,7 +34,7 @@ app.get('/api/all-posts/:id', function(req, res) {
 });
 
 app.get('/', function(req, res){
-  Post.find({}).sort({'date': -1}).limit(4).exec(function(err, foundFeaturedBlogs) {
+  Post.find({}).sort({'date': -1}).limit(2).exec(function(err, foundFeaturedBlogs) {
     if (err) {
       console.log(err);
     }

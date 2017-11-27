@@ -10,48 +10,49 @@
     </div>
 </div>
 
-    <div id="about-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-5 col-xl-4">
-            <img class="rounded-circle" src="https://s3-us-west-1.amazonaws.com/a-travelers-high/etc/mttamalpais.jpeg">
-          </div>
-          <div class="col-md-6 col-lg-7 col-xl-8">
-            <div id="about-text">
-              <p>I have been told that being in wonder and awe is a transparent characteristic of mine,
-                in addition to always keeping a positive perspective. As time consuming my schedule is,
-                I am always open to read, write, and take pictures during my spare time as a stress reliever.
-                Working as a nurse in the San Francisco Bay Area since the age of twenty, I have come across
-                extraordinary moments that will continually shape my view in life - including the stories from
-                the ones I have taken care of. These experiences, in fact, push me to be even hungrier for
-                perspective and knowledge. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div id="about-section">
   <div class="container">
-    <div id="featured-posts">
-      <h2 class="med-margin">Featured Posts</h2>
-      <hr class="hr-title">
-      <div class="std-margin">
-        <div class="row text-center">
-          <% featuredBlogs.forEach(function(featuredBlog) { %>
-
-                <div class="col-xs-12 col-sm-6">
-                    <div class="img-thumbnail">
-                        <img src="<%= featuredBlog.thumb %>">
-                        <div class="post-text">
-                            <h2><%= featuredBlog.name %></h2>
-                            <a href="/travel/<%= featuredBlog._id %>" class="more-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-          <% });%>
+    <div class="row">
+      <div class="col-md-6 col-lg-5 col-xl-4">
+        <img class="rounded-circle" src="https://s3-us-west-1.amazonaws.com/a-travelers-high/etc/mttamalpais.jpeg">
+      </div>
+      <div class="col-md-6 col-lg-7 col-xl-8">
+        <div id="about-text">
+          <p>I have been told that being in wonder and awe is a transparent characteristic of mine,
+            in addition to always keeping a positive perspective. As time consuming my schedule is,
+            I am always open to read, write, and take pictures during my spare time as a stress reliever.
+            Working as a nurse in the San Francisco Bay Area since the age of twenty, I have come across
+            extraordinary moments that will continually shape my view in life - including the stories from
+            the ones I have taken care of. These experiences, in fact, push me to be even hungrier for
+            perspective and knowledge. </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="featured-posts">
+    <h2 class="med-margin">Featured Posts</h2>
+    <hr class="hr-title">
+    <div class="std-margin">
+      <div class="row text-center">
+        <% featuredBlogs.forEach(function(featuredBlog) { %>
+
+              <div class="col-xs-12 col-sm-6">
+                  <div class="img-thumbnail">
+                      <img src="<%= featuredBlog.thumb %>">
+                      <div class="post-text">
+                          <h2><%= featuredBlog.name %></h2>
+                          <a href="/travel/<%= featuredBlog._id %>" class="more-btn">Read More</a>
+                      </div>
+                  </div>
+              </div>
+
+        <% });%>
+      </div>
+    </div>
+  </div>
 </div>
 
 
