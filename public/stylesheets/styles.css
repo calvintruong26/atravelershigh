@@ -9,6 +9,8 @@ body {
   font-weight: 400;
   min-width: 375px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
@@ -115,10 +117,6 @@ button.navbar-toggler {
   height: 100px;
 }
 
-.push {
-  height: 100px;
-}
-
 .footer > .container {
   margin: 0 auto;
 }
@@ -136,8 +134,7 @@ button.navbar-toggler {
 /* HELPERS */
 
 .content {
-  min-height: 100%;
-  margin: 0 auto -100px;
+  flex: 1 0 auto;
 }
 
 .std-margin {
