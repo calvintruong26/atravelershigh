@@ -27,8 +27,17 @@
           </div>
       <% }); %>
     </div>
+    <% if (page > 1) { %>
+      <div class="float-left">
+        <a href="/travel?page=<%= page - 1%>" class="nav-page"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev</a>
+      </div>
+    <% } %>
+    <% if (hasNextPage) { %>
+      <div class="float-right">
+        <a href="/travel?page=<%= page + 1%>" class="nav-page">Next <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+      </div>
+    <% } %>
   </div>
-
 </div>
 
 <% include ../partials/footer %>

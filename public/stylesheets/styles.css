@@ -84,6 +84,15 @@ button.navbar-toggler {
 }
 
 
+.nav-page {
+  padding: 5px 10px;
+  color: black;
+}
+
+.nav-page:hover {
+  text-decoration: underline;
+  color: gray;
+}
 
 
 

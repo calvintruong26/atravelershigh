@@ -10,6 +10,9 @@ mongoose.connect("mongodb://localhost/atravelershigh");
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
+
+//seedDB();
+
 // Get info on most recent posts
 app.get('/api/posts/recent', function(req, res) {
     Post.find({}).sort({'date': -1}).limit(config.RECENT_POSTS_SIZE).exec(function(err, posts) {
@@ -63,17 +66,22 @@ app.get('/travel', function(req, res){
     page = parseInt(page);
     Post.find({category: 'Travel'})
         .sort({'date': -1})
+        .skip((page - 1) * config.BLOG_INDEX_SIZE)
+        .limit(config.BLOG_INDEX_SIZE + 1)
         .exec(function(err, foundTravelPosts){
       if (err) {
         console.log(err);
         res.redirect('/');
       }
       else {
-        var numResults = foundTravelPosts.length;
-        var firstResult = (page - 1) * config.BLOG_INDEX_SIZE;
-        foundTravelPosts = foundTravelPosts.slice(firstResult, firstResult + config.BLOG_INDEX_SIZE);
 
-        if (numResults > 0 && foundTravelPosts.length < 1) {
+        var hasNextPage = (foundTravelPosts.length === config.BLOG_INDEX_SIZE + 1) ? true : false;
+        var firstResult = (page - 1) * config.BLOG_INDEX_SIZE;
+        if (hasNextPage) {
+          foundTravelPosts = foundTravelPosts.slice(firstResult, firstResult + config.BLOG_INDEX_SIZE);
+        }
+
+        if (foundTravelPosts.length < 1) {
           console.log("Page " + page + " doesn't exist...");
           return res.render("./main/404");
         }
@@ -82,8 +90,7 @@ app.get('/travel', function(req, res){
             {
               travelPosts: foundTravelPosts,
               page: page,
-              numResults: numResults,
-              PAGE_SIZE: config.BLOG_INDEX_SIZE
+              hasNextPage: hasNextPage
             });
         }
       }
@@ -105,5 +112,5 @@ app.get('/travel/:id', function(req, res) {
 
 app.listen(3000, function() {
 	console.log("Server starting...");
-    console.log("Server started!");
+  console.log("Server started!");
 });
